@@ -39,6 +39,17 @@
 		223FF554224E1DE600D9C48A /* Kingfisher.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 223FF535224E1DA400D9C48A /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		223FF555224E1DE600D9C48A /* RxCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 223FF536224E1DA400D9C48A /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		223FF556224E1DE600D9C48A /* RxSwift.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 223FF534224E1DA400D9C48A /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		223FF559224E1F9800D9C48A /* LocationProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF558224E1F9800D9C48A /* LocationProvidable.swift */; };
+		223FF55A224E1F9800D9C48A /* LocationProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF558224E1F9800D9C48A /* LocationProvidable.swift */; };
+		223FF55C224E1FD100D9C48A /* LocationManagerConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF55B224E1FD100D9C48A /* LocationManagerConfigurable.swift */; };
+		223FF55D224E1FD100D9C48A /* LocationManagerConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF55B224E1FD100D9C48A /* LocationManagerConfigurable.swift */; };
+		223FF55F224E201400D9C48A /* CLLocationManager+LocationManagerConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF55E224E201400D9C48A /* CLLocationManager+LocationManagerConfigurable.swift */; };
+		223FF560224E201400D9C48A /* CLLocationManager+LocationManagerConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF55E224E201400D9C48A /* CLLocationManager+LocationManagerConfigurable.swift */; };
+		223FF562224E207400D9C48A /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF561224E207400D9C48A /* LocationProvider.swift */; };
+		223FF563224E207400D9C48A /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF561224E207400D9C48A /* LocationProvider.swift */; };
+		223FF566224E20DF00D9C48A /* MockLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF565224E20DF00D9C48A /* MockLocationProvider.swift */; };
+		223FF567224E20DF00D9C48A /* MockLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF565224E20DF00D9C48A /* MockLocationProvider.swift */; };
+		223FF56A224E212300D9C48A /* LocationProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF568224E212300D9C48A /* LocationProviderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +116,12 @@
 		223FF544224E1DD800D9C48A /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		223FF545224E1DD800D9C48A /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		223FF546224E1DD800D9C48A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		223FF558224E1F9800D9C48A /* LocationProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvidable.swift; sourceTree = "<group>"; };
+		223FF55B224E1FD100D9C48A /* LocationManagerConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerConfigurable.swift; sourceTree = "<group>"; };
+		223FF55E224E201400D9C48A /* CLLocationManager+LocationManagerConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+LocationManagerConfigurable.swift"; sourceTree = "<group>"; };
+		223FF561224E207400D9C48A /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
+		223FF565224E20DF00D9C48A /* MockLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationProvider.swift; sourceTree = "<group>"; };
+		223FF568224E212300D9C48A /* LocationProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProviderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +176,7 @@
 		223FF50E224E1B1200D9C48A /* Walkabout */ = {
 			isa = PBXGroup;
 			children = (
+				223FF557224E1F4800D9C48A /* Location */,
 				223FF52F224E1BEE00D9C48A /* Models */,
 				223FF50F224E1B1200D9C48A /* AppDelegate.swift */,
 				223FF511224E1B1200D9C48A /* ViewController.swift */,
@@ -173,8 +191,10 @@
 		223FF523224E1B1400D9C48A /* WalkaboutTests */ = {
 			isa = PBXGroup;
 			children = (
-				223FF524224E1B1400D9C48A /* WalkaboutTests.swift */,
 				223FF526224E1B1400D9C48A /* Info.plist */,
+				223FF564224E20CB00D9C48A /* Mocks */,
+				223FF524224E1B1400D9C48A /* WalkaboutTests.swift */,
+				223FF568224E212300D9C48A /* LocationProviderTests.swift */,
 			);
 			path = WalkaboutTests;
 			sourceTree = "<group>";
@@ -201,6 +221,25 @@
 				223FF534224E1DA400D9C48A /* RxSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		223FF557224E1F4800D9C48A /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				223FF558224E1F9800D9C48A /* LocationProvidable.swift */,
+				223FF55B224E1FD100D9C48A /* LocationManagerConfigurable.swift */,
+				223FF55E224E201400D9C48A /* CLLocationManager+LocationManagerConfigurable.swift */,
+				223FF561224E207400D9C48A /* LocationProvider.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		223FF564224E20CB00D9C48A /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				223FF565224E20DF00D9C48A /* MockLocationProvider.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,9 +344,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				223FF559224E1F9800D9C48A /* LocationProvidable.swift in Sources */,
+				223FF55F224E201400D9C48A /* CLLocationManager+LocationManagerConfigurable.swift in Sources */,
 				223FF531224E1C1800D9C48A /* Photo.swift in Sources */,
+				223FF566224E20DF00D9C48A /* MockLocationProvider.swift in Sources */,
+				223FF55C224E1FD100D9C48A /* LocationManagerConfigurable.swift in Sources */,
 				223FF512224E1B1200D9C48A /* ViewController.swift in Sources */,
 				223FF510224E1B1200D9C48A /* AppDelegate.swift in Sources */,
+				223FF562224E207400D9C48A /* LocationProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,8 +359,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				223FF560224E201400D9C48A /* CLLocationManager+LocationManagerConfigurable.swift in Sources */,
+				223FF55A224E1F9800D9C48A /* LocationProvidable.swift in Sources */,
 				223FF532224E1C1800D9C48A /* Photo.swift in Sources */,
+				223FF567224E20DF00D9C48A /* MockLocationProvider.swift in Sources */,
+				223FF563224E207400D9C48A /* LocationProvider.swift in Sources */,
+				223FF56A224E212300D9C48A /* LocationProviderTests.swift in Sources */,
 				223FF525224E1B1400D9C48A /* WalkaboutTests.swift in Sources */,
+				223FF55D224E1FD100D9C48A /* LocationManagerConfigurable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
