@@ -15,6 +15,7 @@ class PhotoStreamViewModel: PhotoStreamViewModelConfirming, LocationObservable, 
     let observer: PhotoStreamViewModelObserving
     private let networkQueue = DispatchQueue(label: "in.b3rl.networkQueue")
     private let disposeBag = DisposeBag()
+    internal var shouldFetchPhotos: Bool = false
     
     init(observer: PhotoStreamViewModelObserving) {
         self.observer = observer
@@ -23,30 +24,33 @@ class PhotoStreamViewModel: PhotoStreamViewModelConfirming, LocationObservable, 
             self.locationProvider.startLocationUpdates()
         }
     }
-    
-    func getAvailablePhotos() {
-        observer.updateCollection(latitude: 0, longitude: 0)
+
+    func startPhotoStream() {
+        shouldFetchPhotos = true
+    }
+    func stopPhotoStream() {
+        shouldFetchPhotos = false
     }
     
     //
     func setCurrentLocation(latitude: Double, longitude: Double) {
-        print("currentLocation is: \(latitude) : \(longitude)")
-        _ = flickrRequest.getPhotos(for: latitude, longitude: longitude)
-            .subscribeOn(ConcurrentDispatchQueueScheduler(queue: networkQueue))
-            .subscribe(onNext: {[weak self] (response) in
-                guard let photo = response.photos.randomElement() else {
-                    return
-                }
-                //print("got new photo: \(photo.title)")
-                self?.photos.append(photo)
-                self?.observer.updateCollection(latitude: latitude, longitude: longitude)
+        if shouldFetchPhotos {
+            _ = flickrRequest.getPhotos(for: latitude, longitude: longitude)
+                .subscribeOn(ConcurrentDispatchQueueScheduler(queue: networkQueue))
+                .subscribe(onNext: {[weak self] (response) in
+                    guard let photo = response.photos.randomElement() else {
+                        return
+                    }
+                    self?.photos.append(photo)
+                    self?.observer.updateCollection(latitude: latitude, longitude: longitude)
                 }, onError: { (error) in
-                    print("error in flickrRequest.getPhotos(): \(error.localizedDescription)")
-            }, onCompleted: {
-                print("Disposed flickrRequest.getPhotos() ")
-            }) {
-                
-            }.disposed(by: disposeBag)
+                        print("error in flickrRequest.getPhotos(): \(error.localizedDescription)")
+                }, onCompleted: {
+                    print("Completed flickrRequest.getPhotos() ")
+                }) {
+                    print("Disposed flickrRequest.getPhotos() ")
+                }.disposed(by: disposeBag)
+        }
     }
 }
 

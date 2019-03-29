@@ -2,7 +2,8 @@ import Foundation
 
 protocol PhotoStreamViewModelConfirming {
     var photos: [Photo] { get }
-    func getAvailablePhotos()
+    func startPhotoStream()
+    func stopPhotoStream()
 }
 
 protocol PhotoStreamViewModelObserving {

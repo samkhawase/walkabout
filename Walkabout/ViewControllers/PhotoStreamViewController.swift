@@ -25,9 +25,23 @@ class PhotoStreamViewController: UIViewController, PhotoStreamViewModelObserving
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         photosCollectionView.dataSource = self
-        viewModel.getAvailablePhotos()
+    }
+    @IBAction func startButtonPressed(_ sender: Any) {
+        if let sender = sender as? UIBarButtonItem {
+            switch sender.title {
+            case "Start":
+                viewModel.startPhotoStream()
+                sender.title = "Stop"
+                break
+            case "Stop":
+                viewModel.stopPhotoStream()
+                sender.title = "Start"
+                break
+            default:
+                break
+            }
+        }
     }
     func updateCollection(latitude: Double, longitude: Double) {
         DispatchQueue.main.async { [weak self] in
