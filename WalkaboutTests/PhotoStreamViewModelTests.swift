@@ -21,8 +21,11 @@ class PhotoStreamViewModelTests: QuickSpec {
             
             let viewModel = PhotoStreamViewModel(observer: mockViewController)
             it("updates the photo stream for the observer", closure: {
-                viewModel.getAvailablePhotos()
-                expect(mockViewController.successFlag).toEventually(beTrue())
+                //viewModel.getAvailablePhotos()
+                viewModel.startPhotoStream()
+                expect(viewModel.shouldFetchPhotos).toEventually(beTrue())
+                viewModel.stopPhotoStream()
+                expect(viewModel.shouldFetchPhotos).toEventually(beFalse())
             })
         }
     }

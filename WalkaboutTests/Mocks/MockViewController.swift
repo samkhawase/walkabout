@@ -5,4 +5,5 @@ class MockViewController: PhotoStreamViewModelObserving {
     func updateCollection(latitude: Double, longitude: Double) {
         successFlag = true
     }
+    
 }
