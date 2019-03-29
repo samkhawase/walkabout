@@ -64,6 +64,12 @@
 		223FF57D224E26BD00D9C48A /* FlickrRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF57B224E26BD00D9C48A /* FlickrRequest.swift */; };
 		223FF57F224E272700D9C48A /* MockFlickrRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF57E224E272700D9C48A /* MockFlickrRequest.swift */; };
 		223FF581224E27A300D9C48A /* ApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF580224E27A300D9C48A /* ApiClientTests.swift */; };
+		223FF586224E358300D9C48A /* PhotoStreamViewModelConfirming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF585224E358300D9C48A /* PhotoStreamViewModelConfirming.swift */; };
+		223FF587224E358300D9C48A /* PhotoStreamViewModelConfirming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF585224E358300D9C48A /* PhotoStreamViewModelConfirming.swift */; };
+		223FF589224E35A100D9C48A /* PhotoStreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF588224E35A100D9C48A /* PhotoStreamViewModel.swift */; };
+		223FF58A224E35A100D9C48A /* PhotoStreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF588224E35A100D9C48A /* PhotoStreamViewModel.swift */; };
+		223FF58C224E36AF00D9C48A /* PhotoStreamViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF58B224E36AF00D9C48A /* PhotoStreamViewModelTests.swift */; };
+		223FF58E224E36D500D9C48A /* MockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF58D224E36D500D9C48A /* MockViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +150,10 @@
 		223FF57B224E26BD00D9C48A /* FlickrRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrRequest.swift; sourceTree = "<group>"; };
 		223FF57E224E272700D9C48A /* MockFlickrRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFlickrRequest.swift; sourceTree = "<group>"; };
 		223FF580224E27A300D9C48A /* ApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientTests.swift; sourceTree = "<group>"; };
+		223FF585224E358300D9C48A /* PhotoStreamViewModelConfirming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStreamViewModelConfirming.swift; sourceTree = "<group>"; };
+		223FF588224E35A100D9C48A /* PhotoStreamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStreamViewModel.swift; sourceTree = "<group>"; };
+		223FF58B224E36AF00D9C48A /* PhotoStreamViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStreamViewModelTests.swift; sourceTree = "<group>"; };
+		223FF58D224E36D500D9C48A /* MockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +208,7 @@
 		223FF50E224E1B1200D9C48A /* Walkabout */ = {
 			isa = PBXGroup;
 			children = (
+				223FF584224E356800D9C48A /* ViewModels */,
 				223FF56B224E24B100D9C48A /* Network */,
 				223FF557224E1F4800D9C48A /* Location */,
 				223FF52F224E1BEE00D9C48A /* Models */,
@@ -219,6 +230,7 @@
 				223FF524224E1B1400D9C48A /* WalkaboutTests.swift */,
 				223FF568224E212300D9C48A /* LocationProviderTests.swift */,
 				223FF580224E27A300D9C48A /* ApiClientTests.swift */,
+				223FF58B224E36AF00D9C48A /* PhotoStreamViewModelTests.swift */,
 			);
 			path = WalkaboutTests;
 			sourceTree = "<group>";
@@ -263,6 +275,7 @@
 			children = (
 				223FF565224E20DF00D9C48A /* MockLocationProvider.swift */,
 				223FF57E224E272700D9C48A /* MockFlickrRequest.swift */,
+				223FF58D224E36D500D9C48A /* MockViewController.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -278,6 +291,15 @@
 				223FF57B224E26BD00D9C48A /* FlickrRequest.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		223FF584224E356800D9C48A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				223FF585224E358300D9C48A /* PhotoStreamViewModelConfirming.swift */,
+				223FF588224E35A100D9C48A /* PhotoStreamViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,8 +408,10 @@
 				223FF559224E1F9800D9C48A /* LocationProvidable.swift in Sources */,
 				223FF55F224E201400D9C48A /* CLLocationManager+LocationManagerConfigurable.swift in Sources */,
 				223FF531224E1C1800D9C48A /* Photo.swift in Sources */,
+				223FF586224E358300D9C48A /* PhotoStreamViewModelConfirming.swift in Sources */,
 				223FF573224E263C00D9C48A /* NetworkRequestProviding+Default.swift in Sources */,
 				223FF566224E20DF00D9C48A /* MockLocationProvider.swift in Sources */,
+				223FF589224E35A100D9C48A /* PhotoStreamViewModel.swift in Sources */,
 				223FF55C224E1FD100D9C48A /* LocationManagerConfigurable.swift in Sources */,
 				223FF579224E269900D9C48A /* FlickrResource.swift in Sources */,
 				223FF57C224E26BD00D9C48A /* FlickrRequest.swift in Sources */,
@@ -403,6 +427,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				223FF58E224E36D500D9C48A /* MockViewController.swift in Sources */,
 				223FF577224E265400D9C48A /* DateFormatter.swift in Sources */,
 				223FF560224E201400D9C48A /* CLLocationManager+LocationManagerConfigurable.swift in Sources */,
 				223FF55A224E1F9800D9C48A /* LocationProvidable.swift in Sources */,
@@ -414,9 +439,12 @@
 				223FF57D224E26BD00D9C48A /* FlickrRequest.swift in Sources */,
 				223FF571224E25B900D9C48A /* NetworkRequestProviding.swift in Sources */,
 				223FF57F224E272700D9C48A /* MockFlickrRequest.swift in Sources */,
+				223FF58C224E36AF00D9C48A /* PhotoStreamViewModelTests.swift in Sources */,
+				223FF587224E358300D9C48A /* PhotoStreamViewModelConfirming.swift in Sources */,
 				223FF581224E27A300D9C48A /* ApiClientTests.swift in Sources */,
 				223FF56E224E259000D9C48A /* ApiResourceProviding.swift in Sources */,
 				223FF56A224E212300D9C48A /* LocationProviderTests.swift in Sources */,
+				223FF58A224E35A100D9C48A /* PhotoStreamViewModel.swift in Sources */,
 				223FF525224E1B1400D9C48A /* WalkaboutTests.swift in Sources */,
 				223FF55D224E1FD100D9C48A /* LocationManagerConfigurable.swift in Sources */,
 			);

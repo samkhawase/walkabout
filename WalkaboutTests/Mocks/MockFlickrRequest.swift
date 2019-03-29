@@ -1,7 +1,7 @@
 import Foundation
 import RxSwift
 
-class MockAmenityRequest: FlickrApiRequest {
+class MockFlickrRequest: FlickrApiRequest {
     let testJson = """
             {
                 "photos": {
