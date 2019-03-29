@@ -21,13 +21,14 @@ class FlickrResource: ApiResourceProviding {
     }
     
     private let method = "flickr.photos.search"
-    private var apiKey = "bdd5e4b5f5b0cc7300d85531ae41561e"
+    private var apiKey = ""
     var latitude: Double
     var longitude: Double
     
-    init(latitude: Double, longitude: Double) {
+    init(latitude: Double, longitude: Double, apiKey: String) {
         self.latitude = latitude
         self.longitude = longitude
+        self.apiKey = apiKey
     }
     
 }

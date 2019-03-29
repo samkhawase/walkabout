@@ -4,7 +4,12 @@ import RxSwift
 class FlickrApiRequest: NetworkRequestProviding {
     
     func getPhotos(for latitude: Double, longitude: Double) -> Observable<Response> {
-        let flickrResource = FlickrResource(latitude: latitude, longitude: longitude)
+        // get Flickr API key from info.plist
+        guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String else {
+            return Observable.error(NSError(domain: "de.shunya", code: 999, userInfo: nil))
+        }
+        // create a Resource to be used to get data
+        let flickrResource = FlickrResource(latitude: latitude, longitude: longitude, apiKey: apiKey)
         guard let flickrUrlRequest = createURLRequest(from: flickrResource) else {
             return Observable.error(NSError(domain: "de.shunya", code: 666, userInfo: nil))
         }
