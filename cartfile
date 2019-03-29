@@ -1,0 +1,7 @@
+github "onevcat/Kingfisher"
+github "ReactiveX/RxSwift" ~> 4.0
+
+github "Quick/Quick"
+github "Quick/Nimble"
+github "AliSoftware/OHHTTPStubs"
+
