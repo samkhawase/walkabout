@@ -74,7 +74,7 @@
       <AdditionalOptions>
       </AdditionalOptions>
       <LocationScenarioReference
-         identifier = "../../Ba&#x308;hlin.gpx"
+         identifier = "../../Walkabout/Ba&#x308;hlin.gpx"
          referenceType = "0">
       </LocationScenarioReference>
    </LaunchAction>
