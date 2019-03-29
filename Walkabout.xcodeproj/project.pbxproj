@@ -71,7 +71,9 @@
 		223FF58C224E36AF00D9C48A /* PhotoStreamViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF58B224E36AF00D9C48A /* PhotoStreamViewModelTests.swift */; };
 		223FF58E224E36D500D9C48A /* MockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF58D224E36D500D9C48A /* MockViewController.swift */; };
 		223FF590224E3B2000D9C48A /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF58F224E3B2000D9C48A /* PhotoCollectionViewCell.swift */; };
-		223FF592224E3BDD00D9C48A /* Bählin.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 223FF591224E3BDD00D9C48A /* Bählin.gpx */; };
+		2285AD1D224E40FB00688EE8 /* PhotoStreamViewModelInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285AD1C224E40FB00688EE8 /* PhotoStreamViewModelInjectable.swift */; };
+		2285AD21224E447500688EE8 /* Bählin.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 2285AD20224E447500688EE8 /* Bählin.gpx */; };
+		2285AD24224E458500688EE8 /* PhotoStreamViewModelInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285AD1C224E40FB00688EE8 /* PhotoStreamViewModelInjectable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,7 +159,8 @@
 		223FF58B224E36AF00D9C48A /* PhotoStreamViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStreamViewModelTests.swift; sourceTree = "<group>"; };
 		223FF58D224E36D500D9C48A /* MockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewController.swift; sourceTree = "<group>"; };
 		223FF58F224E3B2000D9C48A /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
-		223FF591224E3BDD00D9C48A /* Bählin.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Bählin.gpx"; sourceTree = SOURCE_ROOT; };
+		2285AD1C224E40FB00688EE8 /* PhotoStreamViewModelInjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStreamViewModelInjectable.swift; sourceTree = "<group>"; };
+		2285AD20224E447500688EE8 /* Bählin.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Bählin.gpx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,18 +215,17 @@
 		223FF50E224E1B1200D9C48A /* Walkabout */ = {
 			isa = PBXGroup;
 			children = (
-				223FF591224E3BDD00D9C48A /* Bählin.gpx */,
+				2285AD22224E449900688EE8 /* Resources */,
+				2285AD1B224E40EC00688EE8 /* Dependencies */,
 				223FF584224E356800D9C48A /* ViewModels */,
 				223FF56B224E24B100D9C48A /* Network */,
 				223FF557224E1F4800D9C48A /* Location */,
 				223FF52F224E1BEE00D9C48A /* Models */,
-				223FF50F224E1B1200D9C48A /* AppDelegate.swift */,
-				223FF511224E1B1200D9C48A /* PhotoStreamViewController.swift */,
+				2285AD1E224E443D00688EE8 /* ViewControllers */,
+				2285AD23224E44AE00688EE8 /* Views */,
 				223FF513224E1B1200D9C48A /* Main.storyboard */,
-				223FF516224E1B1300D9C48A /* Assets.xcassets */,
 				223FF518224E1B1300D9C48A /* LaunchScreen.storyboard */,
-				223FF51B224E1B1300D9C48A /* Info.plist */,
-				223FF58F224E3B2000D9C48A /* PhotoCollectionViewCell.swift */,
+				223FF50F224E1B1200D9C48A /* AppDelegate.swift */,
 			);
 			path = Walkabout;
 			sourceTree = "<group>";
@@ -306,6 +308,40 @@
 				223FF588224E35A100D9C48A /* PhotoStreamViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2285AD1B224E40EC00688EE8 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				2285AD1C224E40FB00688EE8 /* PhotoStreamViewModelInjectable.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		2285AD1E224E443D00688EE8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				223FF511224E1B1200D9C48A /* PhotoStreamViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2285AD22224E449900688EE8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				223FF51B224E1B1300D9C48A /* Info.plist */,
+				223FF516224E1B1300D9C48A /* Assets.xcassets */,
+				2285AD20224E447500688EE8 /* Bählin.gpx */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2285AD23224E44AE00688EE8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				223FF58F224E3B2000D9C48A /* PhotoCollectionViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,7 +433,7 @@
 			files = (
 				223FF51A224E1B1300D9C48A /* LaunchScreen.storyboard in Resources */,
 				223FF517224E1B1300D9C48A /* Assets.xcassets in Resources */,
-				223FF592224E3BDD00D9C48A /* Bählin.gpx in Resources */,
+				2285AD21224E447500688EE8 /* Bählin.gpx in Resources */,
 				223FF515224E1B1200D9C48A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +459,7 @@
 				223FF590224E3B2000D9C48A /* PhotoCollectionViewCell.swift in Sources */,
 				223FF586224E358300D9C48A /* PhotoStreamViewModelConfirming.swift in Sources */,
 				223FF573224E263C00D9C48A /* NetworkRequestProviding+Default.swift in Sources */,
+				2285AD1D224E40FB00688EE8 /* PhotoStreamViewModelInjectable.swift in Sources */,
 				223FF566224E20DF00D9C48A /* MockLocationProvider.swift in Sources */,
 				223FF589224E35A100D9C48A /* PhotoStreamViewModel.swift in Sources */,
 				223FF55C224E1FD100D9C48A /* LocationManagerConfigurable.swift in Sources */,
@@ -440,6 +477,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2285AD24224E458500688EE8 /* PhotoStreamViewModelInjectable.swift in Sources */,
 				223FF58E224E36D500D9C48A /* MockViewController.swift in Sources */,
 				223FF577224E265400D9C48A /* DateFormatter.swift in Sources */,
 				223FF560224E201400D9C48A /* CLLocationManager+LocationManagerConfigurable.swift in Sources */,

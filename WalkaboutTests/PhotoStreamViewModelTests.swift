@@ -14,10 +14,13 @@ class PhotoStreamViewModelTests: QuickSpec {
                                                             pausesLocationUpdatesAutomatically: false)
             let mockFlickrRequest = MockFlickrRequest()
             let mockViewController = MockViewController()
-            let viewModel = PhotoStreamViewModel(locationProvider: mockLocationProvider,
-                                                 observer: mockViewController,
-                                                 flickrRequest: mockFlickrRequest)
-            it("update the photo stream for the observer", closure: {
+            
+            InjectionMap.locationManager = mockLocationManager
+            InjectionMap.flickrRequest = mockFlickrRequest
+            InjectionMap.locationProvider = mockLocationProvider
+            
+            let viewModel = PhotoStreamViewModel(observer: mockViewController)
+            it("updates the photo stream for the observer", closure: {
                 viewModel.getAvailablePhotos()
                 expect(mockViewController.successFlag).toEventually(beTrue())
             })
