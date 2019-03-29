@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		223FF510224E1B1200D9C48A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF50F224E1B1200D9C48A /* AppDelegate.swift */; };
-		223FF512224E1B1200D9C48A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF511224E1B1200D9C48A /* ViewController.swift */; };
+		223FF512224E1B1200D9C48A /* PhotoStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF511224E1B1200D9C48A /* PhotoStreamViewController.swift */; };
 		223FF515224E1B1200D9C48A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 223FF513224E1B1200D9C48A /* Main.storyboard */; };
 		223FF517224E1B1300D9C48A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 223FF516224E1B1300D9C48A /* Assets.xcassets */; };
 		223FF51A224E1B1300D9C48A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 223FF518224E1B1300D9C48A /* LaunchScreen.storyboard */; };
@@ -70,6 +70,8 @@
 		223FF58A224E35A100D9C48A /* PhotoStreamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF588224E35A100D9C48A /* PhotoStreamViewModel.swift */; };
 		223FF58C224E36AF00D9C48A /* PhotoStreamViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF58B224E36AF00D9C48A /* PhotoStreamViewModelTests.swift */; };
 		223FF58E224E36D500D9C48A /* MockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF58D224E36D500D9C48A /* MockViewController.swift */; };
+		223FF590224E3B2000D9C48A /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF58F224E3B2000D9C48A /* PhotoCollectionViewCell.swift */; };
+		223FF592224E3BDD00D9C48A /* Bählin.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 223FF591224E3BDD00D9C48A /* Bählin.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,7 +120,7 @@
 /* Begin PBXFileReference section */
 		223FF50C224E1B1200D9C48A /* Walkabout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Walkabout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		223FF50F224E1B1200D9C48A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		223FF511224E1B1200D9C48A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		223FF511224E1B1200D9C48A /* PhotoStreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStreamViewController.swift; sourceTree = "<group>"; };
 		223FF514224E1B1200D9C48A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		223FF516224E1B1300D9C48A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		223FF519224E1B1300D9C48A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -154,6 +156,8 @@
 		223FF588224E35A100D9C48A /* PhotoStreamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStreamViewModel.swift; sourceTree = "<group>"; };
 		223FF58B224E36AF00D9C48A /* PhotoStreamViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStreamViewModelTests.swift; sourceTree = "<group>"; };
 		223FF58D224E36D500D9C48A /* MockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewController.swift; sourceTree = "<group>"; };
+		223FF58F224E3B2000D9C48A /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		223FF591224E3BDD00D9C48A /* Bählin.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Bählin.gpx"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,16 +212,18 @@
 		223FF50E224E1B1200D9C48A /* Walkabout */ = {
 			isa = PBXGroup;
 			children = (
+				223FF591224E3BDD00D9C48A /* Bählin.gpx */,
 				223FF584224E356800D9C48A /* ViewModels */,
 				223FF56B224E24B100D9C48A /* Network */,
 				223FF557224E1F4800D9C48A /* Location */,
 				223FF52F224E1BEE00D9C48A /* Models */,
 				223FF50F224E1B1200D9C48A /* AppDelegate.swift */,
-				223FF511224E1B1200D9C48A /* ViewController.swift */,
+				223FF511224E1B1200D9C48A /* PhotoStreamViewController.swift */,
 				223FF513224E1B1200D9C48A /* Main.storyboard */,
 				223FF516224E1B1300D9C48A /* Assets.xcassets */,
 				223FF518224E1B1300D9C48A /* LaunchScreen.storyboard */,
 				223FF51B224E1B1300D9C48A /* Info.plist */,
+				223FF58F224E3B2000D9C48A /* PhotoCollectionViewCell.swift */,
 			);
 			path = Walkabout;
 			sourceTree = "<group>";
@@ -354,6 +360,11 @@
 				TargetAttributes = {
 					223FF50B224E1B1200D9C48A = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					223FF51F224E1B1300D9C48A = {
 						CreatedOnToolsVersion = 10.2;
@@ -386,6 +397,7 @@
 			files = (
 				223FF51A224E1B1300D9C48A /* LaunchScreen.storyboard in Resources */,
 				223FF517224E1B1300D9C48A /* Assets.xcassets in Resources */,
+				223FF592224E3BDD00D9C48A /* Bählin.gpx in Resources */,
 				223FF515224E1B1200D9C48A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,6 +420,7 @@
 				223FF559224E1F9800D9C48A /* LocationProvidable.swift in Sources */,
 				223FF55F224E201400D9C48A /* CLLocationManager+LocationManagerConfigurable.swift in Sources */,
 				223FF531224E1C1800D9C48A /* Photo.swift in Sources */,
+				223FF590224E3B2000D9C48A /* PhotoCollectionViewCell.swift in Sources */,
 				223FF586224E358300D9C48A /* PhotoStreamViewModelConfirming.swift in Sources */,
 				223FF573224E263C00D9C48A /* NetworkRequestProviding+Default.swift in Sources */,
 				223FF566224E20DF00D9C48A /* MockLocationProvider.swift in Sources */,
@@ -417,7 +430,7 @@
 				223FF57C224E26BD00D9C48A /* FlickrRequest.swift in Sources */,
 				223FF570224E25B900D9C48A /* NetworkRequestProviding.swift in Sources */,
 				223FF56D224E259000D9C48A /* ApiResourceProviding.swift in Sources */,
-				223FF512224E1B1200D9C48A /* ViewController.swift in Sources */,
+				223FF512224E1B1200D9C48A /* PhotoStreamViewController.swift in Sources */,
 				223FF510224E1B1200D9C48A /* AppDelegate.swift in Sources */,
 				223FF562224E207400D9C48A /* LocationProvider.swift in Sources */,
 			);

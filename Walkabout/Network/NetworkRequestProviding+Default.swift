@@ -19,7 +19,7 @@ extension NetworkRequestProviding {
                     let serverResponse = try? decoder.decode(SerializedType.self, from: data) {
                     observer.onNext(serverResponse as SerializedType)
                 } else {
-                    observer.onError(NSError(domain: "de.shunya.app.Spazieren", code: 999, userInfo: nil))
+                    observer.onError(NSError(domain: "de.shunya.app.Walkabout", code: 999, userInfo: nil))
                 }
                 observer.onCompleted()
             }
