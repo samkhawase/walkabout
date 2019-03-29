@@ -9,20 +9,15 @@
 import Foundation
 import RxSwift
 
-
-class PhotoStreamViewModel: PhotoStreamViewModelConfirming, LocationObservable {
+// This class gets it's dependencies injected through the PhotoStreamViewModelInjectable protocol
+class PhotoStreamViewModel: PhotoStreamViewModelConfirming, LocationObservable, PhotoStreamViewModelInjectable {
     var photos: [Photo] = []
-    
-    let locationProvider: LocationProvidable
     let observer: PhotoStreamViewModelObserving
-    let flickrRequest: FlickrApiRequest
     private let networkQueue = DispatchQueue(label: "in.b3rl.networkQueue")
     private let disposeBag = DisposeBag()
     
-    init(locationProvider: LocationProvidable, observer: PhotoStreamViewModelObserving, flickrRequest: FlickrApiRequest) {
-        self.locationProvider = locationProvider
+    init(observer: PhotoStreamViewModelObserving) {
         self.observer = observer
-        self.flickrRequest = flickrRequest
         defer {
             self.locationProvider.setListener(listener: self)
             self.locationProvider.startLocationUpdates()

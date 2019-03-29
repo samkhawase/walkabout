@@ -15,25 +15,8 @@ class PhotoStreamViewController: UIViewController, PhotoStreamViewModelObserving
     @IBOutlet weak var photosCollectionView: UICollectionView!
     
     private(set) lazy var viewModel:PhotoStreamViewModelConfirming = {
-        let _vm = PhotoStreamViewModel(locationProvider: locationProvider, observer: self, flickrRequest: flickrRequest)
+        let _vm = PhotoStreamViewModel(observer: self)
         return _vm
-    }()
-    private(set) lazy var locationProvider: LocationProvidable = {
-        let _locationProvider = LocationProvider(locationManager: locationManager,
-                                                 distanceFilter: 100,
-                                                 allowsBackgroundLocationUpdates: true,
-                                                 pausesLocationUpdatesAutomatically: false)
-        return _locationProvider
-    }()
-    
-    private(set) lazy var locationManager: LocationManagerConfigurable = {
-        let _clLocationManager = CLLocationManager()
-        return _clLocationManager
-    }()
-    
-    private(set) lazy var flickrRequest: FlickrApiRequest = {
-        let _flickrRequest = FlickrApiRequest()
-        return _flickrRequest
     }()
     
     required init?(coder aDecoder: NSCoder) {
