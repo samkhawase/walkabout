@@ -50,6 +50,20 @@
 		223FF566224E20DF00D9C48A /* MockLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF565224E20DF00D9C48A /* MockLocationProvider.swift */; };
 		223FF567224E20DF00D9C48A /* MockLocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF565224E20DF00D9C48A /* MockLocationProvider.swift */; };
 		223FF56A224E212300D9C48A /* LocationProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF568224E212300D9C48A /* LocationProviderTests.swift */; };
+		223FF56D224E259000D9C48A /* ApiResourceProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF56C224E259000D9C48A /* ApiResourceProviding.swift */; };
+		223FF56E224E259000D9C48A /* ApiResourceProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF56C224E259000D9C48A /* ApiResourceProviding.swift */; };
+		223FF570224E25B900D9C48A /* NetworkRequestProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF56F224E25B900D9C48A /* NetworkRequestProviding.swift */; };
+		223FF571224E25B900D9C48A /* NetworkRequestProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF56F224E25B900D9C48A /* NetworkRequestProviding.swift */; };
+		223FF573224E263C00D9C48A /* NetworkRequestProviding+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF572224E263C00D9C48A /* NetworkRequestProviding+Default.swift */; };
+		223FF574224E263C00D9C48A /* NetworkRequestProviding+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF572224E263C00D9C48A /* NetworkRequestProviding+Default.swift */; };
+		223FF576224E265400D9C48A /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF575224E265400D9C48A /* DateFormatter.swift */; };
+		223FF577224E265400D9C48A /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF575224E265400D9C48A /* DateFormatter.swift */; };
+		223FF579224E269900D9C48A /* FlickrResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF578224E269900D9C48A /* FlickrResource.swift */; };
+		223FF57A224E269900D9C48A /* FlickrResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF578224E269900D9C48A /* FlickrResource.swift */; };
+		223FF57C224E26BD00D9C48A /* FlickrRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF57B224E26BD00D9C48A /* FlickrRequest.swift */; };
+		223FF57D224E26BD00D9C48A /* FlickrRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF57B224E26BD00D9C48A /* FlickrRequest.swift */; };
+		223FF57F224E272700D9C48A /* MockFlickrRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF57E224E272700D9C48A /* MockFlickrRequest.swift */; };
+		223FF581224E27A300D9C48A /* ApiClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF580224E27A300D9C48A /* ApiClientTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +136,14 @@
 		223FF561224E207400D9C48A /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
 		223FF565224E20DF00D9C48A /* MockLocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationProvider.swift; sourceTree = "<group>"; };
 		223FF568224E212300D9C48A /* LocationProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProviderTests.swift; sourceTree = "<group>"; };
+		223FF56C224E259000D9C48A /* ApiResourceProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResourceProviding.swift; sourceTree = "<group>"; };
+		223FF56F224E25B900D9C48A /* NetworkRequestProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestProviding.swift; sourceTree = "<group>"; };
+		223FF572224E263C00D9C48A /* NetworkRequestProviding+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkRequestProviding+Default.swift"; sourceTree = "<group>"; };
+		223FF575224E265400D9C48A /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		223FF578224E269900D9C48A /* FlickrResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrResource.swift; sourceTree = "<group>"; };
+		223FF57B224E26BD00D9C48A /* FlickrRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrRequest.swift; sourceTree = "<group>"; };
+		223FF57E224E272700D9C48A /* MockFlickrRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFlickrRequest.swift; sourceTree = "<group>"; };
+		223FF580224E27A300D9C48A /* ApiClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +198,7 @@
 		223FF50E224E1B1200D9C48A /* Walkabout */ = {
 			isa = PBXGroup;
 			children = (
+				223FF56B224E24B100D9C48A /* Network */,
 				223FF557224E1F4800D9C48A /* Location */,
 				223FF52F224E1BEE00D9C48A /* Models */,
 				223FF50F224E1B1200D9C48A /* AppDelegate.swift */,
@@ -195,6 +218,7 @@
 				223FF564224E20CB00D9C48A /* Mocks */,
 				223FF524224E1B1400D9C48A /* WalkaboutTests.swift */,
 				223FF568224E212300D9C48A /* LocationProviderTests.swift */,
+				223FF580224E27A300D9C48A /* ApiClientTests.swift */,
 			);
 			path = WalkaboutTests;
 			sourceTree = "<group>";
@@ -238,8 +262,22 @@
 			isa = PBXGroup;
 			children = (
 				223FF565224E20DF00D9C48A /* MockLocationProvider.swift */,
+				223FF57E224E272700D9C48A /* MockFlickrRequest.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		223FF56B224E24B100D9C48A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				223FF56C224E259000D9C48A /* ApiResourceProviding.swift */,
+				223FF56F224E25B900D9C48A /* NetworkRequestProviding.swift */,
+				223FF572224E263C00D9C48A /* NetworkRequestProviding+Default.swift */,
+				223FF575224E265400D9C48A /* DateFormatter.swift */,
+				223FF578224E269900D9C48A /* FlickrResource.swift */,
+				223FF57B224E26BD00D9C48A /* FlickrRequest.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,11 +382,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				223FF576224E265400D9C48A /* DateFormatter.swift in Sources */,
 				223FF559224E1F9800D9C48A /* LocationProvidable.swift in Sources */,
 				223FF55F224E201400D9C48A /* CLLocationManager+LocationManagerConfigurable.swift in Sources */,
 				223FF531224E1C1800D9C48A /* Photo.swift in Sources */,
+				223FF573224E263C00D9C48A /* NetworkRequestProviding+Default.swift in Sources */,
 				223FF566224E20DF00D9C48A /* MockLocationProvider.swift in Sources */,
 				223FF55C224E1FD100D9C48A /* LocationManagerConfigurable.swift in Sources */,
+				223FF579224E269900D9C48A /* FlickrResource.swift in Sources */,
+				223FF57C224E26BD00D9C48A /* FlickrRequest.swift in Sources */,
+				223FF570224E25B900D9C48A /* NetworkRequestProviding.swift in Sources */,
+				223FF56D224E259000D9C48A /* ApiResourceProviding.swift in Sources */,
 				223FF512224E1B1200D9C48A /* ViewController.swift in Sources */,
 				223FF510224E1B1200D9C48A /* AppDelegate.swift in Sources */,
 				223FF562224E207400D9C48A /* LocationProvider.swift in Sources */,
@@ -359,11 +403,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				223FF577224E265400D9C48A /* DateFormatter.swift in Sources */,
 				223FF560224E201400D9C48A /* CLLocationManager+LocationManagerConfigurable.swift in Sources */,
 				223FF55A224E1F9800D9C48A /* LocationProvidable.swift in Sources */,
 				223FF532224E1C1800D9C48A /* Photo.swift in Sources */,
+				223FF574224E263C00D9C48A /* NetworkRequestProviding+Default.swift in Sources */,
 				223FF567224E20DF00D9C48A /* MockLocationProvider.swift in Sources */,
 				223FF563224E207400D9C48A /* LocationProvider.swift in Sources */,
+				223FF57A224E269900D9C48A /* FlickrResource.swift in Sources */,
+				223FF57D224E26BD00D9C48A /* FlickrRequest.swift in Sources */,
+				223FF571224E25B900D9C48A /* NetworkRequestProviding.swift in Sources */,
+				223FF57F224E272700D9C48A /* MockFlickrRequest.swift in Sources */,
+				223FF581224E27A300D9C48A /* ApiClientTests.swift in Sources */,
+				223FF56E224E259000D9C48A /* ApiResourceProviding.swift in Sources */,
 				223FF56A224E212300D9C48A /* LocationProviderTests.swift in Sources */,
 				223FF525224E1B1400D9C48A /* WalkaboutTests.swift in Sources */,
 				223FF55D224E1FD100D9C48A /* LocationManagerConfigurable.swift in Sources */,
