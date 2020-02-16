@@ -1,5 +1,5 @@
 github "onevcat/Kingfisher"
-github "ReactiveX/RxSwift" ~> 4.0
+github "ReactiveX/RxSwift" ~> 5.0.1
 
 github "Quick/Quick"
 github "Quick/Nimble"
