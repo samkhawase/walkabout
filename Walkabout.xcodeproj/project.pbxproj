@@ -76,6 +76,7 @@
 		2285AD1D224E40FB00688EE8 /* PhotoStreamViewModelInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285AD1C224E40FB00688EE8 /* PhotoStreamViewModelInjectable.swift */; };
 		2285AD21224E447500688EE8 /* Bählin.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 2285AD20224E447500688EE8 /* Bählin.gpx */; };
 		2285AD24224E458500688EE8 /* PhotoStreamViewModelInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285AD1C224E40FB00688EE8 /* PhotoStreamViewModelInjectable.swift */; };
+		22D1FACC23F926860000E02A /* ScaledHeightImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D1FACB23F926860000E02A /* ScaledHeightImageView.swift */; };
 		22DCF6B023F197E600B456AF /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DCF6AF23F197E600B456AF /* RxRelay.framework */; };
 		22DCF6B123F197F000B456AF /* RxRelay.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22DCF6AF23F197E600B456AF /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -167,6 +168,7 @@
 		223FF58F224E3B2000D9C48A /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		2285AD1C224E40FB00688EE8 /* PhotoStreamViewModelInjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStreamViewModelInjectable.swift; sourceTree = "<group>"; };
 		2285AD20224E447500688EE8 /* Bählin.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Bählin.gpx"; sourceTree = "<group>"; };
+		22D1FACB23F926860000E02A /* ScaledHeightImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledHeightImageView.swift; sourceTree = "<group>"; };
 		22DCF6AF23F197E600B456AF /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -350,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				223FF58F224E3B2000D9C48A /* PhotoCollectionViewCell.swift */,
+				22D1FACB23F926860000E02A /* ScaledHeightImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				223FF573224E263C00D9C48A /* NetworkRequestProviding+Default.swift in Sources */,
 				2285AD1D224E40FB00688EE8 /* PhotoStreamViewModelInjectable.swift in Sources */,
 				223FF566224E20DF00D9C48A /* MockLocationProvider.swift in Sources */,
+				22D1FACC23F926860000E02A /* ScaledHeightImageView.swift in Sources */,
 				223FF589224E35A100D9C48A /* PhotoStreamViewModel.swift in Sources */,
 				223FF55C224E1FD100D9C48A /* LocationManagerConfigurable.swift in Sources */,
 				223FF579224E269900D9C48A /* FlickrResource.swift in Sources */,
