@@ -35,7 +35,7 @@ class ApiClientTests: XCTestCase {
                 else {
                         preconditionFailure("Could not find expected file in test bundle")
                 }
-            return OHHTTPStubsResponse(data: jsonData, statusCode:200, headers:nil)
+            return HTTPStubsResponse(data: jsonData, statusCode:200, headers:nil)
         })
         
         // Arrange
@@ -60,7 +60,7 @@ class ApiClientTests: XCTestCase {
         XCTAssert(locations.count == 1)
     }
     override func tearDown() {
-        OHHTTPStubs.removeAllStubs()
+        HTTPStubs.removeAllStubs()
     }
 }
 

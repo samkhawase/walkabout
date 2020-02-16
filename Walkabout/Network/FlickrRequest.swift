@@ -30,8 +30,9 @@ class FlickrApiRequest: NetworkRequestProviding {
             return nil
         }
         let flickrRequest = NSMutableURLRequest(url:baseUrl,
-                                                cachePolicy: .returnCacheDataElseLoad,
+                                                cachePolicy: .reloadIgnoringLocalCacheData,
                                                 timeoutInterval: 1.0)
+        flickrRequest.timeoutInterval = 600
         flickrRequest.httpMethod = "POST"
         
         flickrRequest.httpBody = resource.data

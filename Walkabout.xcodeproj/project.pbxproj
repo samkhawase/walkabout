@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2203C4B323F19A6200987A1E /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223FF541224E1DD800D9C48A /* OHHTTPStubs.framework */; };
+		2203C4B423F1A3D700987A1E /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DCF6AF23F197E600B456AF /* RxRelay.framework */; };
+		2203C4B523F1A3DE00987A1E /* RxRelay.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22DCF6AF23F197E600B456AF /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		223FF510224E1B1200D9C48A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF50F224E1B1200D9C48A /* AppDelegate.swift */; };
 		223FF512224E1B1200D9C48A /* PhotoStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223FF511224E1B1200D9C48A /* PhotoStreamViewController.swift */; };
 		223FF515224E1B1200D9C48A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 223FF513224E1B1200D9C48A /* Main.storyboard */; };
@@ -24,7 +27,6 @@
 		223FF53E224E1DD800D9C48A /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223FF535224E1DA400D9C48A /* Kingfisher.framework */; };
 		223FF53F224E1DD800D9C48A /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223FF534224E1DA400D9C48A /* RxSwift.framework */; };
 		223FF540224E1DD800D9C48A /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223FF536224E1DA400D9C48A /* RxCocoa.framework */; };
-		223FF547224E1DD800D9C48A /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223FF541224E1DD800D9C48A /* OHHTTPStubs.framework */; };
 		223FF548224E1DD800D9C48A /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223FF542224E1DD800D9C48A /* RxAtomic.framework */; };
 		223FF549224E1DD800D9C48A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223FF543224E1DD800D9C48A /* Quick.framework */; };
 		223FF54A224E1DD800D9C48A /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223FF544224E1DD800D9C48A /* RxBlocking.framework */; };
@@ -74,6 +76,8 @@
 		2285AD1D224E40FB00688EE8 /* PhotoStreamViewModelInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285AD1C224E40FB00688EE8 /* PhotoStreamViewModelInjectable.swift */; };
 		2285AD21224E447500688EE8 /* Bählin.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 2285AD20224E447500688EE8 /* Bählin.gpx */; };
 		2285AD24224E458500688EE8 /* PhotoStreamViewModelInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285AD1C224E40FB00688EE8 /* PhotoStreamViewModelInjectable.swift */; };
+		22DCF6B023F197E600B456AF /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DCF6AF23F197E600B456AF /* RxRelay.framework */; };
+		22DCF6B123F197F000B456AF /* RxRelay.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22DCF6AF23F197E600B456AF /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +97,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				22DCF6B123F197F000B456AF /* RxRelay.framework in CopyFiles */,
 				223FF53B224E1DB000D9C48A /* Kingfisher.framework in CopyFiles */,
 				223FF53C224E1DB000D9C48A /* RxCocoa.framework in CopyFiles */,
 				223FF53D224E1DB000D9C48A /* RxSwift.framework in CopyFiles */,
@@ -105,6 +110,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				2203C4B523F1A3DE00987A1E /* RxRelay.framework in CopyFiles */,
 				223FF54E224E1DE600D9C48A /* Nimble.framework in CopyFiles */,
 				223FF54F224E1DE600D9C48A /* OHHTTPStubs.framework in CopyFiles */,
 				223FF550224E1DE600D9C48A /* Quick.framework in CopyFiles */,
@@ -161,6 +167,7 @@
 		223FF58F224E3B2000D9C48A /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		2285AD1C224E40FB00688EE8 /* PhotoStreamViewModelInjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStreamViewModelInjectable.swift; sourceTree = "<group>"; };
 		2285AD20224E447500688EE8 /* Bählin.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Bählin.gpx"; sourceTree = "<group>"; };
+		22DCF6AF23F197E600B456AF /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22DCF6B023F197E600B456AF /* RxRelay.framework in Frameworks */,
 				223FF537224E1DA400D9C48A /* RxSwift.framework in Frameworks */,
 				223FF538224E1DA400D9C48A /* Kingfisher.framework in Frameworks */,
 				223FF539224E1DA400D9C48A /* RxCocoa.framework in Frameworks */,
@@ -178,7 +186,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				223FF547224E1DD800D9C48A /* OHHTTPStubs.framework in Frameworks */,
+				2203C4B423F1A3D700987A1E /* RxRelay.framework in Frameworks */,
+				2203C4B323F19A6200987A1E /* OHHTTPStubs.framework in Frameworks */,
 				223FF548224E1DD800D9C48A /* RxAtomic.framework in Frameworks */,
 				223FF549224E1DD800D9C48A /* Quick.framework in Frameworks */,
 				223FF54A224E1DD800D9C48A /* RxBlocking.framework in Frameworks */,
@@ -254,6 +263,7 @@
 		223FF533224E1DA400D9C48A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22DCF6AF23F197E600B456AF /* RxRelay.framework */,
 				223FF546224E1DD800D9C48A /* Nimble.framework */,
 				223FF541224E1DD800D9C48A /* OHHTTPStubs.framework */,
 				223FF543224E1DD800D9C48A /* Quick.framework */,
