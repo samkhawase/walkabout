@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -56,6 +56,10 @@
 		8AB68BCE25154CBD001704D4 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB68BCD25154CBD001704D4 /* AsyncImage.swift */; };
 		8AB68BD025154CD6001704D4 /* TemporaryImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB68BCF25154CD6001704D4 /* TemporaryImageCache.swift */; };
 		8AB68BD325154DCE001704D4 /* EnvironmentValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB68BD225154DCE001704D4 /* EnvironmentValues.swift */; };
+		8ACD9CA02518919700E46CCF /* OHHTTPStubsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8ACD9C9F2518919700E46CCF /* OHHTTPStubsSwift */; };
+		8ACD9CA22518919700E46CCF /* OHHTTPStubs in Frameworks */ = {isa = PBXBuildFile; productRef = 8ACD9CA12518919700E46CCF /* OHHTTPStubs */; };
+		8ACD9CA5251891D000E46CCF /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 8ACD9CA4251891D000E46CCF /* Quick */; };
+		8ACD9CA82518920200E46CCF /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 8ACD9CA72518920200E46CCF /* Nimble */; };
 		8AD845712517BCD10052FDE0 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		8AE01A592517B5F800FBED06 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		8AE01A5C2517B61000FBED06 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
@@ -133,7 +137,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ACD9CA5251891D000E46CCF /* Quick in Frameworks */,
+				8ACD9CA82518920200E46CCF /* Nimble in Frameworks */,
+				8ACD9CA22518919700E46CCF /* OHHTTPStubs in Frameworks */,
 				8AE01A592517B5F800FBED06 /* (null) in Frameworks */,
+				8ACD9CA02518919700E46CCF /* OHHTTPStubsSwift in Frameworks */,
 				8AE01A5C2517B61000FBED06 /* (null) in Frameworks */,
 				8AD845712517BCD10052FDE0 /* (null) in Frameworks */,
 			);
@@ -343,6 +351,12 @@
 				223FF522224E1B1400D9C48A /* PBXTargetDependency */,
 			);
 			name = WalkaboutTests;
+			packageProductDependencies = (
+				8ACD9C9F2518919700E46CCF /* OHHTTPStubsSwift */,
+				8ACD9CA12518919700E46CCF /* OHHTTPStubs */,
+				8ACD9CA4251891D000E46CCF /* Quick */,
+				8ACD9CA72518920200E46CCF /* Nimble */,
+			);
 			productName = WalkaboutTests;
 			productReference = 223FF520224E1B1300D9C48A /* WalkaboutTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -379,6 +393,11 @@
 				Base,
 			);
 			mainGroup = 223FF503224E1B1200D9C48A;
+			packageReferences = (
+				8ACD9C9E2518919700E46CCF /* XCRemoteSwiftPackageReference "OHHTTPStubs" */,
+				8ACD9CA3251891D000E46CCF /* XCRemoteSwiftPackageReference "Quick" */,
+				8ACD9CA62518920200E46CCF /* XCRemoteSwiftPackageReference "Nimble" */,
+			);
 			productRefGroup = 223FF50D224E1B1200D9C48A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -725,6 +744,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8ACD9C9E2518919700E46CCF /* XCRemoteSwiftPackageReference "OHHTTPStubs" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliSoftware/OHHTTPStubs";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		8ACD9CA3251891D000E46CCF /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		8ACD9CA62518920200E46CCF /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8ACD9C9F2518919700E46CCF /* OHHTTPStubsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8ACD9C9E2518919700E46CCF /* XCRemoteSwiftPackageReference "OHHTTPStubs" */;
+			productName = OHHTTPStubsSwift;
+		};
+		8ACD9CA12518919700E46CCF /* OHHTTPStubs */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8ACD9C9E2518919700E46CCF /* XCRemoteSwiftPackageReference "OHHTTPStubs" */;
+			productName = OHHTTPStubs;
+		};
+		8ACD9CA4251891D000E46CCF /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8ACD9CA3251891D000E46CCF /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+		8ACD9CA72518920200E46CCF /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8ACD9CA62518920200E46CCF /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 223FF504224E1B1200D9C48A /* Project object */;
 }

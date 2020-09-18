@@ -1,57 +1,48 @@
 import XCTest
 import CoreLocation
-import Mocker
+import OHHTTPStubs
+import OHHTTPStubsSwift
 import Combine
 
 class ApiClientTests: XCTestCase {
     let flickrRequest = FlickrApiRequest()
     private var response: AnyPublisher<Response, Error>?
     private var cancellableSink: AnyCancellable?
-    
-    let configuration = URLSessionConfiguration.default
-    var sessionManager: URLSession?
 
-    
-    override func setUp() {
-        configuration.protocolClasses = [MockingURLProtocol.self] + (configuration.protocolClasses ?? [])
-        sessionManager = URLSession(configuration: configuration)
-        
-        guard let jsonData = """
-                {
-                  "photos": {
-                    "page": 1,
-                    "pages": "733078",
-                    "perpage": 1,
-                    "photo": [
-                      {
-                        "farm": 8,
-                        "id": "33596152888",
-                        "isfamily": 0,
-                        "isfriend": 0,
-                        "ispublic": 1,
-                        "owner": "48708043@N00",
-                        "secret": "dd3a574ddb",
-                        "server": "7819",
-                        "title": "Blue In The Face"
-                      }
-                    ],
-                    "total": "733078"
-                  },
-                  "stat": "ok"
-                }
-               """.data(using: .utf8)
-        else {
-                preconditionFailure("Could not load data")
-        }
-        let testHostURL = URL(string:"api.flickr.com/services/rest")!
-
-        let mock = Mock(url: testHostURL, dataType: .json, statusCode: 200, data: [
-            .post: jsonData
-        ])
-        mock.register()
-
-    }
     func testFlickrRequest() {
+        let testHost = "api.flickr.com"
+        
+        stub(condition: isHost(testHost), response: { _ in
+            guard let jsonData = """
+                        {
+                          "photos": {
+                            "page": 1,
+                            "pages": "733078",
+                            "perpage": 1,
+                            "photo": [
+                              {
+                                "farm": 8,
+                                "id": "33596152888",
+                                "isfamily": 0,
+                                "isfriend": 0,
+                                "ispublic": 1,
+                                "owner": "48708043@N00",
+                                "secret": "dd3a574ddb",
+                                "server": "7819",
+                                "title": "Blue In The Face"
+                              }
+                            ],
+                            "total": "733078"
+                          },
+                          "stat": "ok"
+                        }
+                       """.data(using: .utf8)
+                else {
+                        preconditionFailure("Could not find expected file in test bundle")
+                }
+            return HTTPStubsResponse(data: jsonData, statusCode:200, headers:nil)
+        })
+        
         // Arrange
         var successFlag = false
         var locations: [Photo] = []
