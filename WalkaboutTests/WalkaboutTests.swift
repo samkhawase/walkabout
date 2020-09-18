@@ -40,7 +40,7 @@ class WalkaboutTests: QuickSpec {
             describe("This group tests the model parsing", closure: {
                 it("should parse the data correctly", closure: {
                     // targetUrl is in format: https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg 
-                    let targetUrl = "https://farm8.staticflickr.com/7819/33596152888_dd3a574ddb_c.jpg"
+                    let targetUrl = URL(string: "https://farm8.staticflickr.com/7819/33596152888_dd3a574ddb_c.jpg")!
                     if let jData = self.jsonData,
                         let response = try? JSONDecoder().decode(Response.self, from:jData) {
                         expect(response).toNot(beNil())

@@ -1,6 +1,7 @@
 import Foundation
+import Combine
 
-protocol PhotoStreamViewModelConfirming {
+protocol PhotoStreamViewModelConfirming: ObservableObject {
     var photos: [Photo] { get }
     func startPhotoStream()
     func stopPhotoStream()
