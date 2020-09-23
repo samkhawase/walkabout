@@ -2,7 +2,7 @@ import XCTest
 import Quick
 import Nimble
 import CoreLocation
-import OHHTTPStubs
+//import OHHTTPStubs
 
 class PhotoStreamViewModelTests: QuickSpec {
     override func spec() {
@@ -19,13 +19,13 @@ class PhotoStreamViewModelTests: QuickSpec {
             InjectionMap.flickrRequest = mockFlickrRequest
             InjectionMap.locationProvider = mockLocationProvider
             
-            let viewModel = PhotoStreamViewModel(observer: mockViewController)
+            let viewModel = PhotoStreamViewModel()
             it("updates the photo stream for the observer", closure: {
                 //viewModel.getAvailablePhotos()
                 viewModel.startPhotoStream()
-                expect(viewModel.shouldFetchPhotos).toEventually(beTrue())
+                expect(viewModel.shouldStartPhotoStream).toEventually(beTrue())
                 viewModel.stopPhotoStream()
-                expect(viewModel.shouldFetchPhotos).toEventually(beFalse())
+                expect(viewModel.shouldStartPhotoStream).toEventually(beFalse())
             })
         }
     }

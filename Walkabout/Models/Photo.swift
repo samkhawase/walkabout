@@ -1,17 +1,23 @@
 import Foundation
 
-class Photo: Codable {
+class Photo: Codable, Identifiable {
     let farm: Int
     let id, secret, server, title: String
-    var photoUrl: String {
+    var photoUrl: URL {
         get {
-            return "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret)_c.jpg"
+            guard let _photoURL = URL(string: "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret)_c.jpg")
+                else {
+                    return URL(string: "https://via.placeholder.com/640x480.png?text=Placeholder%20Image")!
+            }
+            return _photoURL
         }
     }
 }
 class Response: Codable {
-    let photos: [Photo]
-    
+    var photos: [Photo]
+    init() {
+        photos = []
+    }
     enum CodingKeys: String, CodingKey {
         case photos = "photos"  // this is the outer container
         case photo = "photo"    // this is the inner array

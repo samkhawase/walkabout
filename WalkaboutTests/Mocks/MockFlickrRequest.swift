@@ -1,5 +1,5 @@
 import Foundation
-import RxSwift
+import Combine
 
 class MockFlickrRequest: FlickrApiRequest {
     let testJson = """

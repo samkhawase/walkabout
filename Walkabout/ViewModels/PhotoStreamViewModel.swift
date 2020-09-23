@@ -7,49 +7,56 @@
 //
 
 import Foundation
-import RxSwift
+import Combine
 
-// This class gets it's dependencies injected through the PhotoStreamViewModelInjectable protocol
 class PhotoStreamViewModel: PhotoStreamViewModelConfirming, LocationObservable, PhotoStreamViewModelInjectable {
-    var photos: [Photo] = []
-    let observer: PhotoStreamViewModelObserving
-    private let networkQueue = DispatchQueue(label: "in.b3rl.networkQueue")
-    private let disposeBag = DisposeBag()
-    internal var shouldFetchPhotos: Bool = false
+    @Published private(set) var photos: [Photo] = []
+    @Published var shouldStartPhotoStream: Bool = false
     
-    init(observer: PhotoStreamViewModelObserving) {
-        self.observer = observer
+    private var response: AnyPublisher<Response, Error>?
+    private var cancellableSink: AnyCancellable?
+    
+    init() {
         defer {
             self.locationProvider.setListener(listener: self)
             self.locationProvider.startLocationUpdates()
         }
     }
-
+    
     func startPhotoStream() {
-        shouldFetchPhotos = true
-    }
-    func stopPhotoStream() {
-        shouldFetchPhotos = false
+        shouldStartPhotoStream = true
     }
     
-    //
+    func stopPhotoStream() {
+        shouldStartPhotoStream = false
+        DispatchQueue.main.async {
+            self.cancellableSink?.cancel()
+        }
+    }
+    
     func setCurrentLocation(latitude: Double, longitude: Double) {
-        if shouldFetchPhotos {
-            _ = flickrRequest.getPhotos(for: latitude, longitude: longitude)
-                .subscribeOn(ConcurrentDispatchQueueScheduler(queue: networkQueue))
-                .subscribe(onNext: {[weak self] (response) in
-                    guard let photo = response.photos.randomElement() else {
+        if shouldStartPhotoStream {
+            self.response = flickrRequest.getPhotos(for: latitude, longitude: longitude)
+            guard let response = self.response else { return }
+            
+            self.cancellableSink = response
+                .subscribe(on: DispatchQueue.global())
+                .receive(on: RunLoop.main)
+                .sink(receiveCompletion: { completion in
+                    print(".sink() received the completion", String(describing: completion))
+                    switch completion {
+                    case .finished:
+                        break
+                    case .failure(let anError):
+                        print("received error: ", anError)
+                    }
+                }, receiveValue: { someValue in
+                    print(".sink() received \(someValue)")
+                    guard let randomPhoto = someValue.photos.randomElement() else {
                         return
                     }
-                    self?.photos.append(photo)
-                    self?.observer.updateCollection(latitude: latitude, longitude: longitude)
-                }, onError: { (error) in
-                        print("error in flickrRequest.getPhotos(): \(error.localizedDescription)")
-                }, onCompleted: {
-                    print("Completed flickrRequest.getPhotos() ")
-                }) {
-                    print("Disposed flickrRequest.getPhotos() ")
-                }.disposed(by: disposeBag)
+                    self.photos.append(randomPhoto)
+                })
         }
     }
 }

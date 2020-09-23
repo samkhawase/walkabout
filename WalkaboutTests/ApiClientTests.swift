@@ -1,12 +1,17 @@
 import XCTest
 import CoreLocation
 import OHHTTPStubs
-import RxSwift
+import OHHTTPStubsSwift
+import Combine
 
 class ApiClientTests: XCTestCase {
     let flickrRequest = FlickrApiRequest()
+    private var response: AnyPublisher<Response, Error>?
+    private var cancellableSink: AnyCancellable?
+
     func testFlickrRequest() {
         let testHost = "api.flickr.com"
+        
         stub(condition: isHost(testHost), response: { _ in
             guard let jsonData = """
                         {
@@ -42,25 +47,35 @@ class ApiClientTests: XCTestCase {
         var successFlag = false
         var locations: [Photo] = []
         let expectation = XCTestExpectation(description: "expectation that network request will succeed")
-        // Act
-        _ = flickrRequest.getPhotos(for: 52.51631, longitude: 13.37777)
-            .subscribe(onNext: { response in
-                locations = response.photos
-            }, onError: { error in
-                successFlag = false
-            }, onCompleted: {
-                successFlag = true
-                expectation.fulfill()
-            }, onDisposed: {
-                successFlag = true
-            })
+        
+        //Act
+        response = flickrRequest.getPhotos(for: 52.51631, longitude: 13.37777)
+
+        cancellableSink = response!
+                .subscribe(on: DispatchQueue.global())
+                .receive(on: RunLoop.main)
+                .sink(receiveCompletion: { completion in
+                    print(".sink() received the completion", String(describing: completion))
+                    switch completion {
+                    case .finished:
+                        print("finished")
+                        successFlag = true
+                        expectation.fulfill()
+                        break
+                    case .failure(let anError):
+                        successFlag = false
+                        print("received error: ", anError)
+                    }
+                }, receiveValue: { someValue in
+                    print(".onNext() received \(someValue.photos.count)")
+                    locations = someValue.photos
+                })
         wait(for: [expectation], timeout: 5.0)
         //Assert
         XCTAssert(successFlag)
         XCTAssert(locations.count == 1)
-    }
-    override func tearDown() {
-        HTTPStubs.removeAllStubs()
+        
     }
 }
+
 

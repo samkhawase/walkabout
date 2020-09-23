@@ -1,7 +1,5 @@
 import Foundation
-import RxSwift
-
-typealias CompletionBlock = (_ success: Bool, _ object: AnyObject?) -> ()
+import Combine
 
 protocol NetworkRequestProviding {
     
@@ -9,13 +7,13 @@ protocol NetworkRequestProviding {
     associatedtype SerializedType : Codable
     
     // Observable CRUD interface
-    func get(request: NSMutableURLRequest) -> Observable<SerializedType>
-    func post(request: NSMutableURLRequest) -> Observable<SerializedType>
-    // optional func put(request: NSMutableURLRequest) -> Observable<SerializedType>
-    // optional func delete(request: NSMutableURLRequest) -> Observable<SerializedType>
+    func get(request: NSMutableURLRequest) ->  AnyPublisher<SerializedType, Error>
+    func post(request: NSMutableURLRequest) -> AnyPublisher<SerializedType, Error>
+    // optional func put(request: NSMutableURLRequest) -> AnyPublisher<SerializedType>
+    // optional func delete(request: NSMutableURLRequest) -> AnyPublisher<SerializedType>
     
     // Internal workhorse function: implemented in default extension
-    func dataTask(request: NSMutableURLRequest) -> Observable<SerializedType>
+    func dataTask(request: NSMutableURLRequest) -> AnyPublisher<SerializedType, Error>
     
     // The implementor needs to implement this to provide the ApiResource that the request needs
     func createURLRequest<T: ApiResourceProviding>(from resource: T) -> NSMutableURLRequest?

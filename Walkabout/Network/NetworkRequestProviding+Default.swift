@@ -1,6 +1,5 @@
 import Foundation
-import RxSwift
-import RxCocoa
+import Combine
 
 extension NetworkRequestProviding {
     internal var baseUrl: String {
@@ -8,26 +7,20 @@ extension NetworkRequestProviding {
         return _baseUrl
     }
     
-    func dataTask(request: NSMutableURLRequest) -> Observable<SerializedType> {
-        let session = URLSession(configuration: URLSessionConfiguration.default)
-        return Observable.create { observer in
-            let task = session.dataTask(with: request as URLRequest) { (data, response, error) -> Void in
-                let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
-                if let data = data,
-                    let response = response as? HTTPURLResponse, 200...299 ~= response.statusCode,
-                    let serverResponse = try? decoder.decode(SerializedType.self, from: data) {
-                    observer.onNext(serverResponse as SerializedType)
-                } else {
-                    observer.onError(NSError(domain: "de.shunya.app.Walkabout", code: 999, userInfo: nil))
+    func dataTask(request: NSMutableURLRequest) -> AnyPublisher<SerializedType, Error> {
+        let remoteDataPublisher = URLSession.shared.dataTaskPublisher(for: request as URLRequest)
+            .tryMap() { element -> Data in
+                guard let httpResponse = element.response as? HTTPURLResponse,
+                    httpResponse.statusCode == 200 else {
+                        throw URLError(.badServerResponse)
                 }
-                observer.onCompleted()
-            }
-            task.resume()
-            return Disposables.create {
-                task.cancel()
-            }
+                return element.data
         }
+        .decode(type: SerializedType.self, decoder: JSONDecoder())
+        .print()
+        .eraseToAnyPublisher()
+        
+        return remoteDataPublisher
     }
 }
 //let json = try? JSONSerialization.jsonObject(with: data) as? [String: String]
