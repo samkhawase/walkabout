@@ -13,22 +13,29 @@ struct ContentView: View {
     @Environment(\.imageCache) var cache: ImageCache
     
     var body: some View {
-        List {
+        VStack {
             Toggle(isOn: self.$viewModel.shouldStartPhotoStream) {
                 Text("Start photo stream")
                     .font(.subheadline)
             }
+            .padding([.leading, .trailing], 20)
+            .padding([.bottom, .top], 10)
             Spacer()
-            ForEach(viewModel.photos) { photo in
-                AsyncImage(url: photo.photoUrl,
-                           placeholder: Text("Loading ..."),
-                           cache: self.cache,
-                           configuration: { $0.resizable() })
-                    .frame(minHeight: 200, maxHeight: 200)
-                    .aspectRatio(contentMode: .fit)
+            List {
+                ForEach(viewModel.photos) { photo in
+                    AsyncImage(url: photo.photoUrl,
+                               placeholder: Text("Loading ..."),
+                               cache: self.cache,
+                               configuration: { $0.resizable() })
+                        .frame(minHeight: 200, maxHeight: 200)
+                        .aspectRatio(contentMode: .fit)
+                }
             }
+            .onAppear {
+             UITableView.appearance().separatorStyle = .none
+            }
+            .padding()
         }
-        .padding()
     }
 }
 

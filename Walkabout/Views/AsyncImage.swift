@@ -23,6 +23,7 @@ struct AsyncImage<Placeholder: View>: View {
         image
             .onAppear(perform: loader.load)
             .onDisappear(perform: loader.cancel)
+            .cornerRadius(5.0)
     }
     
     private var image: some View {

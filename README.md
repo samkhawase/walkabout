@@ -59,3 +59,6 @@ WalkaboutTests
 2019-03-29 14:51:56.094 xcodebuild[38284:25040379] [MT] IDETestOperationsObserverDebug: 17.317 sec, +17.317 sec -- end
 ▸ Test Succeeded
 ```
+
+
+Icons made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](https://www.flaticon.com/)
