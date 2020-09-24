@@ -8,7 +8,7 @@ Any time he takes a look at his phone he sees the most recent picture and can sc
 Here are the steps to get started with the project on your local machine:
 
 1. Clone the git repositiory
-2. Run `carthage update --platform iOS --cache-builds --no-use-binaries` to fetch the dependencies.
+2. Wait for Xcode to fetch the dependencies. (The dependencies are only for the test target.)
 3. If running on the simulator, you can edit the scheme and set the simulated location in Xcode. 
 There's a .gpx file with predefined routes called **Bählin.gpx** which could be used to simulate a run between *Berlin RingBahn stations*.
 4. Run the project via Xcode.
@@ -19,8 +19,7 @@ What things you need to install the software and how to install them
 
 1. Mac OS X
 2. Xcode
-3. [Carthage](https://github.com/Carthage/Carthage)
-4. Optional: [xcpretty](https://github.com/supermarin/xcpretty)
+3. Optional: [xcpretty](https://github.com/supermarin/xcpretty)
 
 
 ### Running the tests
@@ -31,32 +30,31 @@ The app uses BDD style tests using Quick and Nimble. There are unit tests writte
 xcodebuild -scheme 'Walkabout' \
     -sdk iphonesimulator \
     -configuration Debug \
-    -destination 'platform=iOS Simulator,name=iPhone X,OS=latest' \
+    -destination 'platform=iOS Simulator,name=iPhone 11,OS=latest' \
     clean build test | xcpretty
 ```
 
 The output will be similar to:
 
 ```
+...
 All tests
-Quick.framework
 Test Suite WalkaboutTests.xctest started
 ApiClientTests
-    ✓ testFlickrRequest (0.010 seconds)
+    ✓ testFlickrRequest (0.064 seconds)
 LocationProviderTests
-    ✓ Given_a_LocationProvider__When_it_s_started_with_LocationManager__then_starts_location_updates (0.011 seconds)
-    ✓ Given_a_LocationProvider__When_it_s_started_with_LocationManager__then_provides_current_location (0.006 seconds)
+    ✓ Given_a_LocationProvider__When_it_s_started_with_LocationManager__then_starts_location_updates (15.518 seconds)
+    ✓ Given_a_LocationProvider__When_it_s_started_with_LocationManager__then_provides_current_location (0.097 seconds)
 PhotoStreamViewModelTests
     ✓ Given_a_PhotoStreamViewModelTests__updates_the_photo_stream_for_the_observer (0.001 seconds)
 WalkaboutTests
     ✓ Test_for_JSON_Parsing__This_group_tests_the_model_parsing__should_parse_the_data_correctly (0.001 seconds)
 
+     Executed 5 tests, with 0 failures (0 unexpected) in 15.681 (15.688) seconds
 
-         Executed 5 tests, with 0 failures (0 unexpected) in 0.029 (0.039) seconds
-
-2019-03-29 14:51:56.094 xcodebuild[38284:25040379] [MT] IDETestOperationsObserverDebug: 17.317 elapsed -- Testing started completed.
-2019-03-29 14:51:56.094 xcodebuild[38284:25040379] [MT] IDETestOperationsObserverDebug: 0.000 sec, +0.000 sec -- start
-2019-03-29 14:51:56.094 xcodebuild[38284:25040379] [MT] IDETestOperationsObserverDebug: 17.317 sec, +17.317 sec -- end
+2020-09-24 11:18:10.999 xcodebuild[20824:467476] [MT] IDETestOperationsObserverDebug: 21.136 elapsed -- Testing started completed.
+2020-09-24 11:18:10.999 xcodebuild[20824:467476] [MT] IDETestOperationsObserverDebug: 0.001 sec, +0.001 sec -- start
+2020-09-24 11:18:10.999 xcodebuild[20824:467476] [MT] IDETestOperationsObserverDebug: 21.136 sec, +21.136 sec -- end
 ▸ Test Succeeded
 ```
 
