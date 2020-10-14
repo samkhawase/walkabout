@@ -1,6 +1,7 @@
 import XCTest
 import CoreLocation
 import OHHTTPStubs
+import OHHTTPStubsSwift
 import RxSwift
 
 class ApiClientTests: XCTestCase {

@@ -5,7 +5,8 @@ class FlickrApiRequest: NetworkRequestProviding {
     
     func getPhotos(for latitude: Double, longitude: Double) -> Observable<Response> {
         // get Flickr API key from info.plist
-        guard let apiKey = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String else {
+        let currentBundle = Bundle(for: type(of: self))
+        guard let apiKey = currentBundle.object(forInfoDictionaryKey: "API_KEY") as? String else {
             return Observable.error(NSError(domain: "de.shunya", code: 999, userInfo: nil))
         }
         // create a Resource to be used to get data
