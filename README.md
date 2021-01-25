@@ -1,7 +1,6 @@
 # Walkabout
 Walkabout is an iOS app that fetches photos from Flickr whenever the user walks 100 meters. 
-The user is starting the app and presses the start button. After that he puts the phone into his pocket and starts walking, every 100 meters a picture for his location is requested from the flickr photo search api and added to his stream. New pictures are added on top.
-Any time he takes a look at his phone he sees the most recent picture and can scroll through a stream of pictures which shows him impressions of where he has been.
+The user is starting the app and presses the start button. After that they put the phone into their pocket and start walking, every 100 meters a picture for their location is requested from the flickr photo search api and added to their stream. New pictures are added on top. Any time they take a look at their phone they see the most recent picture and can scroll through a stream of pictures which show them impressions of where they have been.
 
 ## Getting Started
 
