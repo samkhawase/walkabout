@@ -21,7 +21,7 @@ What things you need to install the software and how to install them
 3. Optional: [xcpretty](https://github.com/supermarin/xcpretty)
 
 
-### Running the tests
+### Running the tests 
 
 The app uses BDD style tests using Quick and Nimble. There are unit tests written to test the LocationManager, APIClient (with Network mocks), and ViewModel behaviors. To run the test, enter the command on the command line.
 
@@ -29,7 +29,7 @@ The app uses BDD style tests using Quick and Nimble. There are unit tests writte
 xcodebuild -scheme 'Walkabout' \
     -sdk iphonesimulator \
     -configuration Debug \
-    -destination 'platform=iOS Simulator,name=iPhone 11,OS=latest' \
+    -destination 'platform=iOS Simulator,name=iPhone SE,OS=latest' \
     clean build test | xcpretty
 ```
 
