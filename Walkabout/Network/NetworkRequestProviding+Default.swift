@@ -23,4 +23,5 @@ extension NetworkRequestProviding {
         return remoteDataPublisher
     }
 }
+// Use this to debug and pretty print the raw JSON data as String
 //let json = try? JSONSerialization.jsonObject(with: data) as? [String: String]
