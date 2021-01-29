@@ -29,7 +29,7 @@ The app uses BDD style tests using Quick and Nimble. There are unit tests writte
 xcodebuild -scheme 'Walkabout' \
     -sdk iphonesimulator \
     -configuration Debug \
-    -destination 'platform=iOS Simulator,name=iPhone SE,OS=latest' \
+    -destination 'platform=iOS Simulator,name=iPhone X,OS=latest' \
     clean build test | xcpretty
 ```
 
